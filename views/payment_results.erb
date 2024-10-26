@@ -19,7 +19,7 @@
     APR
   </dt>
   <dd>
-    <%= apr %>%
+    <%= params["user_apr"].to_f.to_fs(:percentage, {:precision => 4}) %>
   </dd>
 
   <dt>
@@ -33,14 +33,14 @@
     Principal
   </dt>
   <dd>
-    $<%= principal %>
+    <%= principal.to_fs(:currency) %>
   </dd>
 
   <dt>
     Payment
   </dt>
   <dd>
-    $<%= monthly_payment%>
+    <%= monthly_payment.round(4).to_fs(:currency)%>
   </dd>
 </dl>
 
